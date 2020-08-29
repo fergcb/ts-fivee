@@ -35,7 +35,7 @@ api.races.fetch('gnome')
 
 ## License
 
-**This project, the Fivee API wrapper is licensed under the [MIT license](https://github.com/fergcb/fivee/blob/master/LICENSE.md)**
+**This project, the Fivee API wrapper is licensed under the [MIT license](https://github.com/fergcb/fivee/blob/master/LICENSE)**
 
 [D&D 5e SRD](https://dnd.wizards.com/articles/features/systems-reference-document-srd) content provided by the API is licensed under the [Open Game License](https://en.wikipedia.org/wiki/Open_Game_License), Version 1.0a.
 
