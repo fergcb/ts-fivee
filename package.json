@@ -3,6 +3,9 @@
   "version": "0.1.1",
   "description": "Fivee is a powerful typescript wrapper library for the D&D 5e SRD API",
   "main": "build/index.js",
+  "author": "Fergus Bentley <fergusbentley@gmail.com> (fergcb.uk)",
+  "license": "ISC",
+  "files": [ "build/*" ],
   "scripts": {
     "lint": "eslint . --ext .ts",
     "type-check": "tsc --noEmit",
@@ -13,8 +16,6 @@
     "build:js": "babel src --out-dir build --extensions \".ts,.tsx\" --source-maps inline",
     "start": "babel-node -x \".ts\" test/sandbox.ts"
   },
-  "author": "Fergus Bentley <fergusbentley@gmail.com> (fergcb.uk)",
-  "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.1",
