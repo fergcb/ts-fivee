@@ -1,17 +1,11 @@
 import Model from './Model'
 import { RaceData, ProficiencyData, LanguageData, TraitData, SubraceData } from '../structures'
-import { Fivee } from '../fivee'
-
 export default class Race extends Model<RaceData> {
 
     private _startingProficiencies?: ProficiencyData[]
     private _languages?: LanguageData[]
     private _traits?: TraitData[]
     private _subraces?: SubraceData[]
-
-    constructor(api: Fivee, data: RaceData) {
-        super(api, data)
-    }
 
     get name (): RaceData['name'] {
         return this.data.name
