@@ -3,7 +3,7 @@ import { Fivee } from '../fivee';
 
 export default abstract class Model<T extends BaseData = BaseData> {
 
-    private cache: Map<keyof T, BaseData[]>
+    private cache: Map<keyof T, any>
 
     constructor (
         protected api: Fivee,
@@ -20,21 +20,39 @@ export default abstract class Model<T extends BaseData = BaseData> {
         return this.data.url
     }
 
-    private isReferenceArray (value: any): value is (string | APIResource)[] {
-        return Array.isArray(value) && (value.length === 0 || typeof value[0] === 'string' || 'url' in value[0])
+    private isReference (value: any): value is string | APIResource {
+        return typeof value === 'string' || 'url' in value
     }
 
-    protected async fetchCachable<U extends BaseData> (key: keyof T): Promise<U[]> {
+    private isReferenceArray (value: any): value is (string | APIResource)[] {
+        return Array.isArray(value) && value.every(this.isReference)
+    }
+
+    protected async fetchCachable<U extends BaseData> (key: keyof T): Promise<U> {
+        if (this.cache.has(key)) return this.cache.get(key) as U
+        return new Promise<U>((resolve, reject) => {
+            const ref = this.data[key]
+            if (this.isReference(ref)) {
+                this.api.resolveResource<U>(ref)
+                    .then(resource => {
+                        this.cache.set(key, resource)
+                        resolve(resource)
+                    })
+            }
+        })
+    }
+
+    protected async fetchCachables<U extends BaseData> (key: keyof T): Promise<U[]> {
         if (this.cache.has(key)) return this.cache.get(key) as U[]
         return new Promise<U[]>((resolve, reject) => {
             const refs = this.data[key]
             if (this.isReferenceArray(refs)) {
                 this.api.resolveResources<U>(refs)
-                .then(resources => {
-                    this.cache.set(key, resources)
-                    resolve(resources)
-                })
-                .catch(reject)
+                    .then(resources => {
+                        this.cache.set(key, resources)
+                        resolve(resources)
+                    })
+                    .catch(reject)
             }
             else reject(new TypeError(`Model.data.${key} is not an array of references.`))
         })

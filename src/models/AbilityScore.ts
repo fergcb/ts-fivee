@@ -19,7 +19,7 @@ export default class AbilityScore extends Model<AbilityScoreData> {
     }
 
     public async fetchSkills (): Promise<SkillData[]> {
-        return this.fetchCachable<SkillData>('skills')
+        return this.fetchCachables<SkillData>('skills')
     }
 
 }

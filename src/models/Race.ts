@@ -43,7 +43,7 @@ export default class Race extends Model<RaceData> {
     }
 
     async fetchStartingProficiencies (): Promise<ProficiencyData[]> {
-        return this.fetchCachable<ProficiencyData>('starting_proficiencies')
+        return this.fetchCachables<ProficiencyData>('starting_proficiencies')
     }
 
     get languages (): RaceData['languages'] {
@@ -51,7 +51,7 @@ export default class Race extends Model<RaceData> {
     }
 
     async fetchLanguages (): Promise<LanguageData[]> {
-        return this.fetchCachable<LanguageData>('languages')
+        return this.fetchCachables<LanguageData>('languages')
     }
 
     get languageDescription (): RaceData['language_desc'] {
@@ -63,7 +63,7 @@ export default class Race extends Model<RaceData> {
     }
 
     async fetchTraits (): Promise<TraitData[]> {
-        return this.fetchCachable<TraitData>('traits')
+        return this.fetchCachables<TraitData>('traits')
     }
 
     get subraces (): RaceData['subraces'] {
@@ -71,7 +71,7 @@ export default class Race extends Model<RaceData> {
     }
 
     async fetchSubraces (): Promise<SubraceData[]> {
-        return this.fetchCachable<SubraceData>('subraces')
+        return this.fetchCachables<SubraceData>('subraces')
     }
 
 }
