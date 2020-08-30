@@ -7,7 +7,15 @@
 - **Data Relationships** - internal references in the API data can be expanded as needed with a simple method call.
 
 ## Installation
-*Coming Soon*
+### NPM
+```
+npm i fivee
+```
+
+### Yarn
+```
+yarn add fivee
+```
 
 ## Getting Started
 Import an initialise the Fivee wrapper:
