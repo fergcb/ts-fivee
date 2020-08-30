@@ -18,7 +18,7 @@ yarn add fivee
 ```
 
 ## Getting Started
-Import an initialise the Fivee wrapper:
+Import and initialise the Fivee wrapper:
 ```js
 const { fivee } = require('fivee')
 
