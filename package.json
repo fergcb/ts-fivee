@@ -1,11 +1,13 @@
 {
   "name": "fivee",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Fivee is a powerful typescript wrapper library for the D&D 5e SRD API",
   "main": "build/index.js",
   "author": "Fergus Bentley <fergusbentley@gmail.com> (fergcb.uk)",
   "license": "ISC",
-  "files": [ "build/*" ],
+  "files": [
+    "build/*"
+  ],
   "scripts": {
     "lint": "eslint . --ext .ts",
     "type-check": "tsc --noEmit",
