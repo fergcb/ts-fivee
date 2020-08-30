@@ -1,7 +1,7 @@
 import { BaseData, FiveeOptions, APIResource } from './structures'
 import axios, { AxiosResponse } from 'axios'
-import RacesManager from './managers/RacesManager'
 import { NotFoundError } from './errors'
+import { AbilityScoresManager, RacesManager } from './managers'
 
 const defaultOptions: FiveeOptions = {
     baseURL: 'https://www.dnd5eapi.co'
@@ -13,11 +13,14 @@ export function fivee (options: FiveeOptions = {}): Fivee {
 
 export class Fivee {
 
-    public options: FiveeOptions;
+    public options: FiveeOptions
     public races: RacesManager
+    public abilityScores: AbilityScoresManager
 
     constructor(options: FiveeOptions = {}) {
         this.options = Object.assign(defaultOptions, options)
+
+        this.abilityScores = new AbilityScoresManager(this)
         this.races = new RacesManager(this)
     }
 
