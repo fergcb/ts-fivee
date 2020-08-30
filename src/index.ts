@@ -1,8 +1,15 @@
 import { fivee, Fivee } from './fivee'
 
 import {
+    Model,
+    Race,
+    AbilityScore
+} from './models'
+
+import {
     ResourceManager,
     RacesManager,
+    AbilityScoresManager,
 } from './managers'
 
 import { 
@@ -11,19 +18,19 @@ import {
     NotFoundError,
 } from './errors'
 
-import {
-    Model,
-    Race,
-} from './models'
-
 export {
     fivee,
     Fivee,
+
     FiveeError,
     CacheMissError,
     NotFoundError,
-    ResourceManager,
-    RacesManager,
+
     Model,
+    AbilityScore,
     Race,
+
+    ResourceManager,
+    AbilityScoresManager,
+    RacesManager,
 }
