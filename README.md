@@ -12,7 +12,7 @@
 ## Getting Started
 Import an initialise the Fivee wrapper:
 ```js
-import { fivee } from 'fivee'
+const { fivee } = require('fivee')
 
 const api = fivee()
 ```
