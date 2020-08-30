@@ -2,11 +2,6 @@ import Model from './Model'
 import { RaceData, ProficiencyData, LanguageData, TraitData, SubraceData } from '../structures'
 export default class Race extends Model<RaceData> {
 
-    private _startingProficiencies?: ProficiencyData[]
-    private _languages?: LanguageData[]
-    private _traits?: TraitData[]
-    private _subraces?: SubraceData[]
-
     get name (): RaceData['name'] {
         return this.data.name
     }
@@ -48,8 +43,7 @@ export default class Race extends Model<RaceData> {
     }
 
     async fetchStartingProficiencies (): Promise<ProficiencyData[]> {
-        if (this._startingProficiencies !== undefined) return this._startingProficiencies
-        return await this.api.resolveResources<ProficiencyData>(this.data.starting_proficiencies)
+        return this.fetchCachable<ProficiencyData>('starting_proficiencies')
     }
 
     get languages (): RaceData['languages'] {
@@ -57,8 +51,7 @@ export default class Race extends Model<RaceData> {
     }
 
     async fetchLanguages (): Promise<LanguageData[]> {
-        if (this._languages !== undefined) return this._languages
-        return await this.api.resolveResources<LanguageData>(this.data.languages)
+        return this.fetchCachable<LanguageData>('languages')
     }
 
     get languageDescription (): RaceData['language_desc'] {
@@ -70,8 +63,7 @@ export default class Race extends Model<RaceData> {
     }
 
     async fetchTraits (): Promise<TraitData[]> {
-        if (this._traits !== undefined) return this._traits
-        return await this.api.resolveResources<TraitData>(this.data.traits)
+        return this.fetchCachable<TraitData>('traits')
     }
 
     get subraces (): RaceData['subraces'] {
@@ -79,8 +71,7 @@ export default class Race extends Model<RaceData> {
     }
 
     async fetchSubraces (): Promise<SubraceData[]> {
-        if (this._subraces !== undefined) return this._subraces
-        return await this.api.resolveResources<SubraceData>(this.data.subraces)
+        return this.fetchCachable<SubraceData>('subraces')
     }
 
 }
