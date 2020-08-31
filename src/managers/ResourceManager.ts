@@ -1,6 +1,6 @@
 import { APIResource, BaseData } from '../structures'
 import { Fivee } from '../fivee'
-import { CacheMissError } from '../errors'
+import { CacheMissError, InvalidIndexError } from '../errors'
 import Model from '../models/Model'
 
 export default abstract class ResourceManager<T extends Model<U>, U extends BaseData> {
@@ -60,6 +60,9 @@ export default abstract class ResourceManager<T extends Model<U>, U extends Base
                             this.api.resolveResource<U>(res)
                                 .then(res => resolve(this.expand(res)))
                                 .catch(reject)
+                        }
+                        else {
+                            throw new InvalidIndexError(this.api, index.toString(), this.listURL)
                         }
                     })
                     .catch(reject)
