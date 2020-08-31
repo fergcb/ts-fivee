@@ -3,7 +3,7 @@ import { Fivee } from '../fivee';
 
 export default abstract class Model<T extends BaseData = BaseData> {
 
-    private cache: Map<keyof T, any>
+    protected cache: Map<keyof T, any>
 
     constructor (
         protected api: Fivee,
