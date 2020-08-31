@@ -62,6 +62,7 @@ export default abstract class ResourceManager<T extends Model<U>, U extends Base
                                 .catch(reject)
                         }
                     })
+                    .catch(reject)
             }
         })
     }

@@ -38,6 +38,7 @@ export default abstract class Model<T extends BaseData = BaseData> {
                         this.cache.set(key, resource)
                         resolve(resource)
                     })
+                    .catch(reject)
             }
         })
     }
