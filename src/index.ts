@@ -2,8 +2,9 @@ import { fivee, Fivee } from './fivee'
 
 import {
     Model,
+    AbilityScore,
+    Class,
     Race,
-    AbilityScore
 } from './models'
 
 import {
@@ -28,6 +29,7 @@ export {
 
     Model,
     AbilityScore,
+    Class,
     Race,
 
     ResourceManager,
