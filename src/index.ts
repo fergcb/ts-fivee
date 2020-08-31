@@ -4,13 +4,16 @@ import {
     Model,
     AbilityScore,
     Class,
+    Condition,
     Race,
 } from './models'
 
 import {
     ResourceManager,
-    RacesManager,
     AbilityScoresManager,
+    ClassesManager,
+    ConditionsManager,
+    RacesManager,
 } from './managers'
 
 import { 
@@ -30,9 +33,12 @@ export {
     Model,
     AbilityScore,
     Class,
+    Condition,
     Race,
 
     ResourceManager,
     AbilityScoresManager,
+    ClassesManager,
+    ConditionsManager,
     RacesManager,
 }
