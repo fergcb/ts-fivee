@@ -3,7 +3,7 @@ import { Fivee } from '../fivee'
 import { CacheMissError } from '../errors'
 import Model from '../models/Model'
 
-export default abstract class ResourceManager<T extends Model, U extends BaseData> {
+export default abstract class ResourceManager<T extends Model<U>, U extends BaseData> {
 
     private cache: Map<BaseData['index'], T>
     private references: Map<BaseData['index'], APIResource>
@@ -16,7 +16,7 @@ export default abstract class ResourceManager<T extends Model, U extends BaseDat
         this.references = new Map<BaseData['index'], APIResource>()
     }
 
-    protected abstract async expand (resource: U): Promise<T>
+    protected abstract expand (resource: U): T
 
     public has (index: BaseData['index']): boolean {
         return this.cache.has(index)
@@ -58,13 +58,7 @@ export default abstract class ResourceManager<T extends Model, U extends BaseDat
                         const res = refs.get(index)
                         if (res !== undefined) {
                             this.api.resolveResource<U>(res)
-                                .then(res => {
-                                    this.expand(res)
-                                        .then((expanded) => {
-                                            resolve(expanded)
-                                        })
-                                        .catch(reject)
-                                })
+                                .then(res => resolve(this.expand(res)))
                                 .catch(reject)
                         }
                     })

@@ -9,7 +9,7 @@ export default class RacesManager extends ResourceManager<Race, RaceData> {
         super(api, '/api/races/')
     }
 
-    protected async expand (data: RaceData): Promise<Race> {
+    protected expand (data: RaceData): Race {
         return new Race(this.api, data)
     }
 

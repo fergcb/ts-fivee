@@ -9,7 +9,7 @@ export default class AbilityScoresManager extends ResourceManager<AbilityScore, 
         super(api, '/api/ability-scores/')
     }
 
-    protected async expand (data: AbilityScoreData): Promise<AbilityScore> {
+    protected expand (data: AbilityScoreData): AbilityScore {
         return new AbilityScore(this.api, data)
     }
 
