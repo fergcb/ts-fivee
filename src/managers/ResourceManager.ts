@@ -58,7 +58,11 @@ export default abstract class ResourceManager<T extends Model<U>, U extends Base
                         const res = refs.get(index)
                         if (res !== undefined) {
                             this.api.resolveResource<U>(res)
-                                .then(res => resolve(this.expand(res)))
+                                .then(res => {
+                                    const expanded = this.expand(res)
+                                    this.cache.set(res.index, expanded)
+                                    resolve(expanded)
+                                })
                                 .catch(reject)
                         }
                         else {
@@ -77,13 +81,14 @@ export default abstract class ResourceManager<T extends Model<U>, U extends Base
                     for (const index of refs.keys()) {
                         this.fetch(index)
                             .then(() => {
-                                if (this.cache.size === refs.size) {  
+                                if (this.cache.size === refs.size) {
                                     resolve(Array.from(this.cache.values()))
                                 }
                             })
                             .catch(reject)
                     }
                 })
+                .catch(reject)
         })
     }
 
