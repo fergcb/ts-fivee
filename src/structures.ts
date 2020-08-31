@@ -157,9 +157,10 @@ export interface ClassData extends BaseData {
     proficiencies: APIResource[],
     proficiency_choices: Choice[],
     saving_throws: APIResource[],
-    starting_equipment: string,
-    class_levels: string,
-    subclasses: APIResource[]
+    starting_equipment: APIResource,
+    class_levels: APIResource,
+    subclasses: APIResource[],
+    spellcasting: APIResource
 }
 
 export interface ConditionData extends BaseData {
