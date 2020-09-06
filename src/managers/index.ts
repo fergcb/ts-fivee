@@ -15,6 +15,7 @@ import SkillsManager from './SkillsManager'
 import SpellsManager from './SpellsManager'
 import SubclassesManager from './SubclassesManager'
 import SubracesManager from './SubracesManager'
+import TraitsManager from './TraitsManager'
 
 export { 
     ResourceManager,
@@ -34,4 +35,5 @@ export {
     SpellsManager,
     SubclassesManager,
     SubracesManager,
+    TraitsManager,
 }

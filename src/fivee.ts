@@ -18,6 +18,7 @@ import {
     SpellsManager,
     SubclassesManager,
     SubracesManager,
+    TraitsManager,
 } from './managers'
 
 const defaultOptions: FiveeOptions = {
@@ -48,6 +49,7 @@ export class Fivee {
     public spells: SpellsManager
     public subclasses: SubclassesManager
     public subraces: SubracesManager
+    public traits: TraitsManager
 
     constructor(options: FiveeOptions = {}) {
         this.options = Object.assign(defaultOptions, options)
@@ -68,6 +70,7 @@ export class Fivee {
         this.spells = new SpellsManager(this)
         this.subclasses = new SubclassesManager(this)
         this.subraces = new SubracesManager(this)
+        this.traits = new TraitsManager(this)
     }
 
     private extractReferenceURL(reference: string | APIResource): string {

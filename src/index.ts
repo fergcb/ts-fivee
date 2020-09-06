@@ -23,6 +23,7 @@ import {
     Spell,
     Subclass,
     Subrace,
+    Trait,
 } from './models'
 
 import {
@@ -43,6 +44,7 @@ import {
     SpellsManager,
     SubclassesManager,
     SubracesManager,
+    TraitsManager,
 } from './managers'
 
 import { 
@@ -83,6 +85,7 @@ export {
     Spell,
     Subclass,
     Subrace,
+    Trait,
 
     ResourceManager,
     AbilityScoresManager,
@@ -101,4 +104,5 @@ export {
     SpellsManager,
     SubclassesManager,
     SubracesManager,
+    TraitsManager,
 }
