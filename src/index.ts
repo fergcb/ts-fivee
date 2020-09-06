@@ -20,6 +20,7 @@ import {
     Proficiency,
     Race,
     Skill,
+    Spell,
 } from './models'
 
 import {
@@ -37,6 +38,7 @@ import {
     ProficienciesManager,
     RacesManager,
     SkillsManager,
+    SpellsManager,
 } from './managers'
 
 import { 
@@ -74,6 +76,7 @@ export {
     Proficiency,
     Race,
     Skill,
+    Spell,
 
     ResourceManager,
     AbilityScoresManager,
@@ -89,4 +92,5 @@ export {
     ProficienciesManager,
     RacesManager,
     SkillsManager,
+    SpellsManager,
 }

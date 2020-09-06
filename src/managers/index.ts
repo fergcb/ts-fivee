@@ -12,6 +12,7 @@ import MonstersManager from './MonstersManager'
 import ProficienciesManager from './ProficienciesManager'
 import RacesManager from './RacesManager'
 import SkillsManager from './SkillsManager'
+import SpellsManager from './SpellsManager'
 
 export { 
     ResourceManager,
@@ -28,4 +29,5 @@ export {
     ProficienciesManager,
     RacesManager,
     SkillsManager,
+    SpellsManager,
 }
