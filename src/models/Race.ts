@@ -1,10 +1,7 @@
 import Model from './Model'
 import { RaceData, ProficiencyData, LanguageData, TraitData, SubraceData } from '../structures'
-export default class Race extends Model<RaceData> {
 
-    get name (): RaceData['name'] {
-        return this.data.name
-    }
+export default class Race extends Model<RaceData> {
 
     get speed (): RaceData['speed'] {
         return this.data.speed

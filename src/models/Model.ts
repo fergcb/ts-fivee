@@ -16,6 +16,10 @@ export default abstract class Model<T extends BaseData = BaseData> {
         return this.data.index
     }
 
+    get name (): BaseData['name'] {
+        return this.data.name
+    }
+
     get url (): BaseData['url'] {
         return this.data.url
     }

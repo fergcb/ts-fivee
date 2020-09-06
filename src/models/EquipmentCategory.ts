@@ -4,10 +4,6 @@ import { EquipmentCategoryData, EquipmentData } from '../structures'
 
 export default class EquipmentCategory extends Model<EquipmentCategoryData> {
 
-    get name (): EquipmentCategoryData['name'] {
-        return this.data.name
-    }
-
     get equipment (): EquipmentCategoryData['equipment'] {
         return this.data.equipment
     }

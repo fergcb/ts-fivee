@@ -11,10 +11,6 @@ export default class Feature extends Model<FeatureData> {
         return this.data.subclass
     }
 
-    get name (): FeatureData['name'] {
-        return this.data.name
-    }
-
     get level (): FeatureData['level'] {
         return this.data.level
     }

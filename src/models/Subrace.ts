@@ -3,10 +3,6 @@ import { SubraceData, ProficiencyData, LanguageData, TraitData } from '../struct
 
 export default class Subrace extends Model<SubraceData> {
 
-    get name (): SubraceData['name'] {
-        return this.data.name
-    }
-
     get race (): SubraceData['race'] {
         return this.data.race
     }

@@ -7,10 +7,6 @@ export default class Proficiency extends Model<ProficiencyData> {
         return this.data.type
     }
 
-    get name (): ProficiencyData['name'] {
-        return this.data.name
-    }
-
     get classes (): ProficiencyData['classes'] {
         return this.data.classes
     }

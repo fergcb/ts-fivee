@@ -3,10 +3,6 @@ import { ClassData, ProficiencyData, AbilityScoreData, StartingEquipmentData, Le
 
 export default class Class extends Model<ClassData> {
 
-    get name (): ClassData['name'] {
-        return this.data.name
-    }
-
     get hitDie (): ClassData['hit_die'] {
         return this.data.hit_die
     }
