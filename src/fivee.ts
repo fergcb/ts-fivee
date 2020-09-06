@@ -19,6 +19,7 @@ import {
     SubclassesManager,
     SubracesManager,
     TraitsManager,
+    WeaponPropertiesManager,
 } from './managers'
 
 const defaultOptions: FiveeOptions = {
@@ -50,6 +51,7 @@ export class Fivee {
     public subclasses: SubclassesManager
     public subraces: SubracesManager
     public traits: TraitsManager
+    public weaponProperties: WeaponPropertiesManager
 
     constructor(options: FiveeOptions = {}) {
         this.options = Object.assign(defaultOptions, options)
@@ -71,6 +73,7 @@ export class Fivee {
         this.subclasses = new SubclassesManager(this)
         this.subraces = new SubracesManager(this)
         this.traits = new TraitsManager(this)
+        this.weaponProperties = new WeaponPropertiesManager(this)
     }
 
     private extractReferenceURL(reference: string | APIResource): string {

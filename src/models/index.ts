@@ -21,6 +21,7 @@ import Spell from './Spell'
 import Subclass from './Subclass'
 import Subrace from './Subrace'
 import Trait from './Trait'
+import WeaponProperty from './WeaponProperty'
 
 export {
     Model,
@@ -46,4 +47,5 @@ export {
     Subclass,
     Subrace,
     Trait,
+    WeaponProperty,
 }

@@ -24,6 +24,7 @@ import {
     Subclass,
     Subrace,
     Trait,
+    WeaponProperty,
 } from './models'
 
 import {
@@ -45,6 +46,7 @@ import {
     SubclassesManager,
     SubracesManager,
     TraitsManager,
+    WeaponPropertiesManager,
 } from './managers'
 
 import { 
@@ -86,6 +88,7 @@ export {
     Subclass,
     Subrace,
     Trait,
+    WeaponProperty,
 
     ResourceManager,
     AbilityScoresManager,
@@ -105,4 +108,5 @@ export {
     SubclassesManager,
     SubracesManager,
     TraitsManager,
+    WeaponPropertiesManager,
 }
