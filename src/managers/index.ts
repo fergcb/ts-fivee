@@ -6,6 +6,7 @@ import DamageTypesManager from './DamageTypesManager'
 import EquipmentCategoriesManager from './EquipmentCategoriesManager'
 import EquipmentManager from './EquipmentManager'
 import FeaturesManager from './FeaturesManager'
+import LanguagesManager from './LanguagesManager'
 import RacesManager from './RacesManager'
 
 export { 
@@ -17,5 +18,6 @@ export {
     EquipmentCategoriesManager,
     EquipmentManager,
     FeaturesManager,
+    LanguagesManager,
     RacesManager,
 }

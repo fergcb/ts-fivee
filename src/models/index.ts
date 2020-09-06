@@ -11,6 +11,7 @@ import Tool from './Tool'
 import Vehicle from './Vehicle'
 import Weapon from './Weapon'
 import Feature from './Feature'
+import Language from './Language'
 import Race from './Race'
 
 export {
@@ -27,5 +28,6 @@ export {
     Vehicle,
     Weapon,
     Feature,
+    Language,
     Race,
 }

@@ -10,6 +10,7 @@ import {
     EquipmentCategoriesManager,
     EquipmentManager,
     FeaturesManager,
+    LanguagesManager,
 } from './managers'
 
 const defaultOptions: FiveeOptions = {
@@ -31,6 +32,7 @@ export class Fivee {
     public equipmentCategories: EquipmentCategoriesManager
     public equipment: EquipmentManager
     public features: FeaturesManager
+    public languages: LanguagesManager
     public races: RacesManager
 
     constructor(options: FiveeOptions = {}) {
@@ -43,6 +45,7 @@ export class Fivee {
         this.equipmentCategories = new EquipmentCategoriesManager(this)
         this.equipment = new EquipmentManager(this)
         this.features = new FeaturesManager(this)
+        this.languages = new LanguagesManager(this)
         this.races = new RacesManager(this)
     }
 
