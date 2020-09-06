@@ -16,6 +16,7 @@ import MagicSchool from './MagicSchool'
 import Monster from './Monster'
 import Proficiency from './Proficiency'
 import Race from './Race'
+import Skill from './Skill'
 
 export {
     Model,
@@ -36,4 +37,5 @@ export {
     Monster,
     Proficiency,
     Race,
+    Skill,
 }

@@ -19,6 +19,7 @@ import {
     Monster,
     Proficiency,
     Race,
+    Skill,
 } from './models'
 
 import {
@@ -35,6 +36,7 @@ import {
     MonstersManager,
     ProficienciesManager,
     RacesManager,
+    SkillsManager,
 } from './managers'
 
 import { 
@@ -71,6 +73,7 @@ export {
     Monster,
     Proficiency,
     Race,
+    Skill,
 
     ResourceManager,
     AbilityScoresManager,
@@ -85,4 +88,5 @@ export {
     MonstersManager,
     ProficienciesManager,
     RacesManager,
+    SkillsManager,
 }
