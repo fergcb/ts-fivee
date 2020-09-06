@@ -7,6 +7,12 @@ import {
     Condition,
     DamageType,
     EquipmentCategory,
+    Equipment,
+    Armor,
+    Gear,
+    Tool,
+    Vehicle,
+    Weapon,
     Race,
 } from './models'
 
@@ -17,6 +23,7 @@ import {
     ConditionsManager,
     DamageTypesManager,
     EquipmentCategoriesManager,
+    EquipmentManager,
     RacesManager,
 } from './managers'
 
@@ -42,6 +49,12 @@ export {
     Condition,
     DamageType,
     EquipmentCategory,
+    Equipment,
+    Armor,
+    Gear,
+    Tool,
+    Vehicle,
+    Weapon,
     Race,
 
     ResourceManager,
@@ -50,5 +63,6 @@ export {
     ConditionsManager,
     DamageTypesManager,
     EquipmentCategoriesManager,
+    EquipmentManager,
     RacesManager,
 }

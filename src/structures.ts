@@ -182,7 +182,7 @@ export interface EquipmentData extends BaseData {
 }
 
 export interface GearData extends EquipmentData {
-    gear_category: GearCategory
+    gear_category: APIResource
     desc?: string[]
 }
 

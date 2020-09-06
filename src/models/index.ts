@@ -4,6 +4,12 @@ import Class from './Class'
 import Condition from './Condition'
 import DamageType from './DamageType'
 import EquipmentCategory from './EquipmentCategory'
+import Equipment from './Equipment'
+import Armor from './Armor'
+import Gear from './Gear'
+import Tool from './Tool'
+import Vehicle from './Vehicle'
+import Weapon from './Weapon'
 import Race from './Race'
 
 export {
@@ -13,5 +19,11 @@ export {
     Condition,
     DamageType,
     EquipmentCategory,
+    Equipment,
+    Armor,
+    Gear,
+    Tool,
+    Vehicle,
+    Weapon,
     Race,
 }
