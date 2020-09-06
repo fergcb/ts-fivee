@@ -21,6 +21,7 @@ import {
     Race,
     Skill,
     Spell,
+    Subclass,
 } from './models'
 
 import {
@@ -39,6 +40,7 @@ import {
     RacesManager,
     SkillsManager,
     SpellsManager,
+    SubclassesManager,
 } from './managers'
 
 import { 
@@ -77,6 +79,7 @@ export {
     Race,
     Skill,
     Spell,
+    Subclass,
 
     ResourceManager,
     AbilityScoresManager,
@@ -93,4 +96,5 @@ export {
     RacesManager,
     SkillsManager,
     SpellsManager,
+    SubclassesManager,
 }

@@ -334,7 +334,7 @@ export interface StartingEquipmentData extends BaseData {
 
 export interface SubclassData extends BaseData {
     class: APIResource,
-    subclass_flavour: string,
+    subclass_flavor: string,
     desc: string[],
     subclass_levels: APIResource
 }
