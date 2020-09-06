@@ -12,6 +12,7 @@ import {
     FeaturesManager,
     LanguagesManager,
     MagicSchoolsManager,
+    MonstersManager,
 } from './managers'
 
 const defaultOptions: FiveeOptions = {
@@ -35,6 +36,7 @@ export class Fivee {
     public features: FeaturesManager
     public languages: LanguagesManager
     public magicSchools: MagicSchoolsManager
+    public monsters: MonstersManager
     public races: RacesManager
 
     constructor(options: FiveeOptions = {}) {
@@ -49,6 +51,7 @@ export class Fivee {
         this.features = new FeaturesManager(this)
         this.languages = new LanguagesManager(this)
         this.magicSchools = new MagicSchoolsManager(this)
+        this.monsters = new MonstersManager(this)
         this.races = new RacesManager(this)
     }
 

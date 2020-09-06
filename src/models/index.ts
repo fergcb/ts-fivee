@@ -13,6 +13,7 @@ import Weapon from './Weapon'
 import Feature from './Feature'
 import Language from './Language'
 import MagicSchool from './MagicSchool'
+import Monster from './Monster'
 import Race from './Race'
 
 export {
@@ -31,5 +32,6 @@ export {
     Feature,
     Language,
     MagicSchool,
+    Monster,
     Race,
 }
