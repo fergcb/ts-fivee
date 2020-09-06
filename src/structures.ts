@@ -344,7 +344,7 @@ export interface SubraceData extends BaseData {
     desc: string,
     ability_bonuses: AbilityBonus[],
     ability_bonus_options?: Choice,
-    starting_proficiencies: ProficiencyData[]
+    starting_proficiencies: APIResource[]
     starting_proficiency_options?: Choice,
     languages: APIResource[],
     languages_options?: Choice,
