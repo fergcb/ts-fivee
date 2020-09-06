@@ -3,6 +3,7 @@ import AbilityScoresManager from './AbilityScoresManager'
 import ClassesManager from './ClassesManager'
 import ConditionsManager from './ConditionsManager'
 import DamageTypesManager from './DamageTypesManager'
+import EquipmentCategoriesManager from './EquipmentCategoriesManager'
 import RacesManager from './RacesManager'
 
 export { 
@@ -11,5 +12,6 @@ export {
     ClassesManager,
     ConditionsManager,
     DamageTypesManager,
-    RacesManager
+    EquipmentCategoriesManager,
+    RacesManager,
 }

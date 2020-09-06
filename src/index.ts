@@ -6,6 +6,7 @@ import {
     Class,
     Condition,
     DamageType,
+    EquipmentCategory,
     Race,
 } from './models'
 
@@ -15,6 +16,7 @@ import {
     ClassesManager,
     ConditionsManager,
     DamageTypesManager,
+    EquipmentCategoriesManager,
     RacesManager,
 } from './managers'
 
@@ -39,6 +41,7 @@ export {
     Class,
     Condition,
     DamageType,
+    EquipmentCategory,
     Race,
 
     ResourceManager,
@@ -46,5 +49,6 @@ export {
     ClassesManager,
     ConditionsManager,
     DamageTypesManager,
+    EquipmentCategoriesManager,
     RacesManager,
 }
