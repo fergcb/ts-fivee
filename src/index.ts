@@ -17,6 +17,7 @@ import {
     Language,
     MagicSchool,
     Monster,
+    Proficiency,
     Race,
 } from './models'
 
@@ -32,6 +33,7 @@ import {
     LanguagesManager,
     MagicSchoolsManager,
     MonstersManager,
+    ProficienciesManager,
     RacesManager,
 } from './managers'
 
@@ -67,6 +69,7 @@ export {
     Language,
     MagicSchool,
     Monster,
+    Proficiency,
     Race,
 
     ResourceManager,
@@ -80,5 +83,6 @@ export {
     LanguagesManager,
     MagicSchoolsManager,
     MonstersManager,
+    ProficienciesManager,
     RacesManager,
 }

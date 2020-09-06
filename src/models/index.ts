@@ -14,6 +14,7 @@ import Feature from './Feature'
 import Language from './Language'
 import MagicSchool from './MagicSchool'
 import Monster from './Monster'
+import Proficiency from './Proficiency'
 import Race from './Race'
 
 export {
@@ -33,5 +34,6 @@ export {
     Language,
     MagicSchool,
     Monster,
+    Proficiency,
     Race,
 }

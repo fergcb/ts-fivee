@@ -9,6 +9,7 @@ import FeaturesManager from './FeaturesManager'
 import LanguagesManager from './LanguagesManager'
 import MagicSchoolsManager from './MagicSchoolsManager'
 import MonstersManager from './MonstersManager'
+import ProficienciesManager from './ProficienciesManager'
 import RacesManager from './RacesManager'
 
 export { 
@@ -23,5 +24,6 @@ export {
     LanguagesManager,
     MagicSchoolsManager,
     MonstersManager,
+    ProficienciesManager,
     RacesManager,
 }
