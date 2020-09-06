@@ -5,6 +5,7 @@ import {
     AbilityScore,
     Class,
     Condition,
+    DamageType,
     Race,
 } from './models'
 
@@ -13,12 +14,14 @@ import {
     AbilityScoresManager,
     ClassesManager,
     ConditionsManager,
+    DamageTypesManager,
     RacesManager,
 } from './managers'
 
 import { 
     FiveeError,
     CacheMissError,
+    InvalidIndexError,
     NotFoundError,
 } from './errors'
 
@@ -28,17 +31,20 @@ export {
 
     FiveeError,
     CacheMissError,
+    InvalidIndexError,
     NotFoundError,
 
     Model,
     AbilityScore,
     Class,
     Condition,
+    DamageType,
     Race,
 
     ResourceManager,
     AbilityScoresManager,
     ClassesManager,
     ConditionsManager,
+    DamageTypesManager,
     RacesManager,
 }
