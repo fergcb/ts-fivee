@@ -7,6 +7,7 @@ import EquipmentCategoriesManager from './EquipmentCategoriesManager'
 import EquipmentManager from './EquipmentManager'
 import FeaturesManager from './FeaturesManager'
 import LanguagesManager from './LanguagesManager'
+import MagicSchoolsManager from './MagicSchoolsManager'
 import RacesManager from './RacesManager'
 
 export { 
@@ -19,5 +20,6 @@ export {
     EquipmentManager,
     FeaturesManager,
     LanguagesManager,
+    MagicSchoolsManager,
     RacesManager,
 }

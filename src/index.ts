@@ -15,6 +15,7 @@ import {
     Weapon,
     Feature,
     Language,
+    MagicSchool,
     Race,
 } from './models'
 
@@ -28,6 +29,7 @@ import {
     EquipmentManager,
     FeaturesManager,
     LanguagesManager,
+    MagicSchoolsManager,
     RacesManager,
 } from './managers'
 
@@ -61,6 +63,7 @@ export {
     Weapon,
     Feature,
     Language,
+    MagicSchool,
     Race,
 
     ResourceManager,
@@ -72,5 +75,6 @@ export {
     EquipmentManager,
     FeaturesManager,
     LanguagesManager,
+    MagicSchoolsManager,
     RacesManager,
 }
