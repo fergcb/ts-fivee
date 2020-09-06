@@ -214,6 +214,7 @@ export interface VehicleData extends EquipmentData {
 
 export interface FeatureData extends BaseData {
     class: APIResource,
+    subclass?: APIResource,
     desc: string[],
     level: number
 }

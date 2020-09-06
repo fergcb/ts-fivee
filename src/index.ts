@@ -13,6 +13,7 @@ import {
     Tool,
     Vehicle,
     Weapon,
+    Feature,
     Race,
 } from './models'
 
@@ -24,6 +25,7 @@ import {
     DamageTypesManager,
     EquipmentCategoriesManager,
     EquipmentManager,
+    FeaturesManager,
     RacesManager,
 } from './managers'
 
@@ -55,6 +57,7 @@ export {
     Tool,
     Vehicle,
     Weapon,
+    Feature,
     Race,
 
     ResourceManager,
@@ -64,5 +67,6 @@ export {
     DamageTypesManager,
     EquipmentCategoriesManager,
     EquipmentManager,
+    FeaturesManager,
     RacesManager,
 }

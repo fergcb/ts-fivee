@@ -9,6 +9,7 @@ import {
     DamageTypesManager,
     EquipmentCategoriesManager,
     EquipmentManager,
+    FeaturesManager,
 } from './managers'
 
 const defaultOptions: FiveeOptions = {
@@ -29,6 +30,7 @@ export class Fivee {
     public damageTypes: DamageTypesManager
     public equipmentCategories: EquipmentCategoriesManager
     public equipment: EquipmentManager
+    public features: FeaturesManager
     public races: RacesManager
 
     constructor(options: FiveeOptions = {}) {
@@ -40,6 +42,7 @@ export class Fivee {
         this.damageTypes = new DamageTypesManager(this)
         this.equipmentCategories = new EquipmentCategoriesManager(this)
         this.equipment = new EquipmentManager(this)
+        this.features = new FeaturesManager(this)
         this.races = new RacesManager(this)
     }
 
