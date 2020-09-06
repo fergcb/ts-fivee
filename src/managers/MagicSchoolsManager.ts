@@ -6,7 +6,7 @@ import { MagicSchool } from '../models'
 export default class MagicSchoolsManager extends ResourceManager<MagicSchool, MagicSchoolData> {
 
     constructor (api: Fivee) {
-        super(api, '/api/ability-scores/')
+        super(api, '/api/magic-schools/')
     }
 
     protected expand (data: MagicSchoolData): MagicSchool {
