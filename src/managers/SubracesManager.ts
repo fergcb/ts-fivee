@@ -4,13 +4,11 @@ import { Subrace } from '../models'
 import { SubraceData } from '../structures'
 
 export default class SubracesManager extends ResourceManager<Subrace, SubraceData> {
+  constructor (api: Fivee) {
+    super(api, '/api/subraces/')
+  }
 
-    constructor (api: Fivee) {
-        super(api, '/api/subraces/')
-    }
-
-    protected expand (data: SubraceData): Subrace {
-        return new Subrace(this.api, data)
-    }
-
+  protected expand (data: SubraceData): Subrace {
+    return new Subrace(this.api, data)
+  }
 }

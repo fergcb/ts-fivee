@@ -1,16 +1,17 @@
 {
   "compilerOptions": {
-  "module": "commonjs",
-  "noImplicitAny": true,
-  "sourceMap": false,
-  "declaration": true,
-  "outDir": "build",
-  "target": "es2020",
-  "baseUrl": ".",
-  "esModuleInterop": true,
-  "paths": {
-    "*": ["node_modules/*"]
-  }
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "sourceMap": false,
+    "declaration": true,
+    "outDir": "build",
+    "target": "es2020",
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "strictNullChecks": true,
+    "paths": {
+      "*": ["node_modules/*"]
+    }
   },
   "include": [
     "src/**/*"

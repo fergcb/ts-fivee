@@ -4,13 +4,11 @@ import { MagicSchoolData } from '../structures'
 import { MagicSchool } from '../models'
 
 export default class MagicSchoolsManager extends ResourceManager<MagicSchool, MagicSchoolData> {
+  constructor (api: Fivee) {
+    super(api, '/api/magic-schools/')
+  }
 
-    constructor (api: Fivee) {
-        super(api, '/api/magic-schools/')
-    }
-
-    protected expand (data: MagicSchoolData): MagicSchool {
-        return new MagicSchool(this.api, data)
-    }
-
+  protected expand (data: MagicSchoolData): MagicSchool {
+    return new MagicSchool(this.api, data)
+  }
 }

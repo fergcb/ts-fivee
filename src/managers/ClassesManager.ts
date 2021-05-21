@@ -4,13 +4,11 @@ import { ClassData } from '../structures'
 import { Class } from '../models'
 
 export default class AbilityScoresManager extends ResourceManager<Class, ClassData> {
+  constructor (api: Fivee) {
+    super(api, '/api/classes/')
+  }
 
-    constructor (api: Fivee) {
-        super(api, '/api/classes/')
-    }
-
-    protected expand (data: ClassData): Class {
-        return new Class(this.api, data)
-    }
-
+  protected expand (data: ClassData): Class {
+    return new Class(this.api, data)
+  }
 }
