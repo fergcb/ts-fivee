@@ -2,21 +2,19 @@ import Model from './Model'
 import { FeatureData } from '../structures'
 
 export default class Feature extends Model<FeatureData> {
+  get class (): FeatureData['class'] {
+    return this.data.class
+  }
 
-    get class (): FeatureData['class'] {
-        return this.data.class;
-    }
+  get subclass (): FeatureData['subclass'] {
+    return this.data.subclass
+  }
 
-    get subclass (): FeatureData['subclass'] {
-        return this.data.subclass
-    }
+  get level (): FeatureData['level'] {
+    return this.data.level
+  }
 
-    get level (): FeatureData['level'] {
-        return this.data.level
-    }
-
-    get desc (): FeatureData['desc'] {
-        return this.data.desc
-    }
-
+  get desc (): FeatureData['desc'] {
+    return this.data.desc
+  }
 }

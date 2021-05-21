@@ -4,13 +4,11 @@ import Race from '../models/Race'
 import { RaceData } from '../structures'
 
 export default class RacesManager extends ResourceManager<Race, RaceData> {
+  constructor (api: Fivee) {
+    super(api, '/api/races/')
+  }
 
-    constructor (api: Fivee) {
-        super(api, '/api/races/')
-    }
-
-    protected expand (data: RaceData): Race {
-        return new Race(this.api, data)
-    }
-
+  protected expand (data: RaceData): Race {
+    return new Race(this.api, data)
+  }
 }

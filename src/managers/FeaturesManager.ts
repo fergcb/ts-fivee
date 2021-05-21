@@ -4,13 +4,11 @@ import { Feature } from '../models'
 import { FeatureData } from '../structures'
 
 export default class FeaturesManager extends ResourceManager<Feature, FeatureData> {
+  constructor (api: Fivee) {
+    super(api, '/api/features/')
+  }
 
-    constructor (api: Fivee) {
-        super(api, '/api/features/')
-    }
-
-    protected expand (data: FeatureData): Feature {
-        return new Feature(this.api, data)
-    }
-
+  protected expand (data: FeatureData): Feature {
+    return new Feature(this.api, data)
+  }
 }

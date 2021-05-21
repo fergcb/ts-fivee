@@ -4,13 +4,11 @@ import { AbilityScoreData } from '../structures'
 import { AbilityScore } from '../models'
 
 export default class AbilityScoresManager extends ResourceManager<AbilityScore, AbilityScoreData> {
+  constructor (api: Fivee) {
+    super(api, '/api/ability-scores/')
+  }
 
-    constructor (api: Fivee) {
-        super(api, '/api/ability-scores/')
-    }
-
-    protected expand (data: AbilityScoreData): AbilityScore {
-        return new AbilityScore(this.api, data)
-    }
-
+  protected expand (data: AbilityScoreData): AbilityScore {
+    return new AbilityScore(this.api, data)
+  }
 }
