@@ -22,7 +22,8 @@ export default abstract class ResourceManager<T extends Model<U>, U extends Base
   }
 
   public get (index: BaseData['index']): T {
-    if (this.cache.get(index) != null) { return this.cache.get(index) }
+    const value = this.cache.get(index)
+    if (value !== undefined) return value
 
     throw new CacheMissError(this.api, this.listURL, index)
   }
