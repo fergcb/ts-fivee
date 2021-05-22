@@ -29,62 +29,30 @@ export default abstract class ResourceManager<T extends Model<U>, U extends Base
   }
 
   public async getReferences (): Promise<Map<BaseData['index'], APIResource>> {
-    if (this.references.size > 0) {
-      return this.references
-    } else {
-      return await new Promise<Map<BaseData['index'], APIResource>>((resolve, reject) => {
-        this.api.resolveCollection(this.listURL)
-          .then(res => {
-            res.forEach((reference) => {
-              this.references.set(reference.index, reference)
-            })
-            resolve(this.references)
-          })
-          .catch(reject)
-      })
+    if (this.references.size === 0) {
+      const refs = await this.api.resolveCollection(this.listURL)
+      for (const ref of refs) {
+        this.references.set(ref.index, ref)
+      }
     }
+    return this.references
   }
 
   public async fetch (index: string | number): Promise<T> {
-    return await new Promise<T>((resolve, reject) => {
-      if (this.has(index)) {
-        resolve(this.get(index))
-      } else {
-        this.getReferences()
-          .then(refs => {
-            const res = refs.get(index)
-            if (res !== undefined) {
-              this.api.resolveResource<U>(res)
-                .then(res => {
-                  const expanded = this.expand(res)
-                  this.cache.set(res.index, expanded)
-                  resolve(expanded)
-                })
-                .catch(reject)
-            } else {
-              throw new InvalidIndexError(this.api, index.toString(), this.listURL)
-            }
-          })
-          .catch(reject)
-      }
-    })
+    if (this.has(index)) return this.get(index)
+    const refs = await this.getReferences()
+    const ref = refs.get(index)
+    if (ref === undefined) throw new InvalidIndexError(this.api, index.toString(), this.listURL)
+    const res = await this.api.resolveResource<U>(ref)
+    const expanded = this.expand(res)
+    this.cache.set(res.index, expanded)
+    return expanded
   }
 
   public async fetchAll (): Promise<T[]> {
-    return await new Promise<T[]>((resolve, reject) => {
-      this.getReferences()
-        .then(refs => {
-          for (const index of refs.keys()) {
-            this.fetch(index)
-              .then(() => {
-                if (this.cache.size === refs.size) {
-                  resolve(Array.from(this.cache.values()))
-                }
-              })
-              .catch(reject)
-          }
-        })
-        .catch(reject)
-    })
+    const refs = await this.getReferences()
+    const indexes = Array.from(refs.keys())
+    await Promise.all(indexes.map(async index => await this.fetch(index)))
+    return Array.from(this.cache.values())
   }
 }

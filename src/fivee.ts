@@ -1,6 +1,6 @@
 import { BaseData, FiveeOptions, APIResource } from './structures'
 import axios, { AxiosResponse } from 'axios'
-import { NotFoundError } from './errors'
+import { BadResponseError, NotFoundError } from './errors'
 import {
   AbilityScoresManager,
   ClassesManager,
@@ -79,52 +79,40 @@ export class Fivee {
     return typeof reference === 'string' ? reference : reference.url
   }
 
+  public resolveReferenceURL (reference: string | APIResource): string {
+    const base = this.options.baseURL as string
+    const url = this.extractReferenceURL(reference)
+    return new URL(url, base).href
+  }
+
   async getResource (reference: string | APIResource): Promise<AxiosResponse> {
-    const resourceURL = this.extractReferenceURL(reference)
-    const baseURL = this.options.baseURL ?? ''
-    return await axios.get(baseURL + resourceURL)
+    const url = this.resolveReferenceURL(reference)
+    return await axios.get(url)
   }
 
   async resolveResource<T extends BaseData>(reference: string | APIResource): Promise<T> {
-    return await new Promise<T>((resolve, reject) => {
-      this.getResource(reference)
-        .then(res => {
-          resolve(res.data)
-        })
-        .catch(err => {
-          if (err.response !== null) {
-            if (err.response.status === 404) { err = new NotFoundError(this, this.extractReferenceURL(reference)) }
-          }
-
-          reject(err)
-        })
-    })
+    try {
+      const res = await this.getResource(reference)
+      return res.data
+    } catch (err) {
+      if (err.response !== null && err.response.status === 404) {
+        throw new NotFoundError(this, this.extractReferenceURL(reference))
+      }
+      throw err
+    }
   }
 
   async resolveResources<T extends BaseData>(references: Array<string | APIResource>): Promise<T[]> {
-    return await new Promise<T[]>((resolve, reject) => {
-      let resolved = 0
-      const resources: T[] = []
-      references.forEach((reference, index) => {
-        this.resolveResource<T>(reference)
-          .then(res => {
-            resources[index] = res
-            if (++resolved === references.length) resolve(resources)
-          })
-          .catch(reject)
-      })
-    })
+    return await Promise.all(references.map(async ref => {
+      return await this.resolveResource<T>(ref)
+    }))
   }
 
   async resolveCollection (reference: string | APIResource): Promise<APIResource[]> {
-    return await new Promise<APIResource[]>((resolve, reject) => {
-      const url = (this.options.baseURL ?? '') + this.extractReferenceURL(reference)
-      axios.get(url)
-        .then(res => {
-          if (Array.isArray(res.data)) resolve(res.data)
-          else if ('results' in res.data) resolve(res.data.results)
-        })
-        .catch(reject)
-    })
+    const url = this.resolveReferenceURL(reference)
+    const res = await axios.get(url)
+    if (Array.isArray(res.data)) return res.data
+    if ('results' in res.data) return res.data.results
+    throw new BadResponseError(this, url, 'Expected array, or object with `results` property, when resolving collection')
   }
 }

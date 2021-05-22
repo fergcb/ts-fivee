@@ -22,14 +22,11 @@ export default class Subclass extends Model<SubclassData> {
     return this.data.subclass_levels
   }
 
-  public async fetchClassLevels (): Promise<LevelData[]> {
+  public async fetchSubclassLevels (): Promise<LevelData[]> {
     if (this.cache.has('subclass_levels')) return this.cache.get('subclass_levels')
-    return await this.api
-      .resolveCollection(this.data.subclass_levels)
-      .then(async refs => await this.api.resolveResources<LevelData>(refs))
-      .then(resources => {
-        this.cache.set('subclass_levels', resources)
-        return resources
-      })
+    const refs = await this.api.resolveCollection(this.data.subclass_levels)
+    const resources = await this.api.resolveResources<LevelData>(refs)
+    this.cache.set('subclass_levels', resources)
+    return resources
   }
 }
