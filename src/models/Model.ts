@@ -1,14 +1,15 @@
+import Collection from '@discordjs/collection'
 import { BaseData, APIResource } from '../structures'
 import { Fivee } from '../fivee'
 
 export default abstract class Model<T extends BaseData = BaseData> {
-  protected cache: Map<keyof T, any>
+  protected cache: Collection<keyof T, any>
 
   constructor (
     protected api: Fivee,
     protected data: T
   ) {
-    this.cache = new Map()
+    this.cache = new Collection()
   }
 
   get index (): BaseData['index'] {

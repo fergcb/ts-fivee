@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.11.2",
+    "@discordjs/collection": "^0.1.6",
     "axios": "^0.21.1"
   }
 }

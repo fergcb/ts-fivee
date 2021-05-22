@@ -1,18 +1,19 @@
+import Collection from '@discordjs/collection'
 import { APIResource, BaseData } from '../structures'
 import { Fivee } from '../fivee'
 import { CacheMissError, InvalidIndexError } from '../errors'
 import Model from '../models/Model'
 
 export default abstract class ResourceManager<T extends Model<U>, U extends BaseData> {
-  private readonly cache: Map<BaseData['index'], T>
-  private readonly references: Map<BaseData['index'], APIResource>
+  private readonly cache: Collection<BaseData['index'], T>
+  private readonly references: Collection<BaseData['index'], APIResource>
 
   constructor (
     protected api: Fivee,
     private readonly listURL: string
   ) {
-    this.cache = new Map<BaseData['index'], T>()
-    this.references = new Map<BaseData['index'], APIResource>()
+    this.cache = new Collection<BaseData['index'], T>()
+    this.references = new Collection<BaseData['index'], APIResource>()
   }
 
   protected abstract expand (resource: U): T
@@ -28,7 +29,7 @@ export default abstract class ResourceManager<T extends Model<U>, U extends Base
     throw new CacheMissError(this.api, this.listURL, index)
   }
 
-  public async getReferences (): Promise<Map<BaseData['index'], APIResource>> {
+  public async getReferences (): Promise<Collection<BaseData['index'], APIResource>> {
     if (this.references.size === 0) {
       const refs = await this.api.resolveCollection(this.listURL)
       for (const ref of refs) {
