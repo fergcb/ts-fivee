@@ -40,13 +40,10 @@ export default class Class extends Model<ClassData> {
 
   public async fetchClassLevels (): Promise<LevelData[]> {
     if (this.cache.has('class_levels')) return this.cache.get('class_levels')
-    return await this.api
-      .resolveCollection(this.data.class_levels)
-      .then(async refs => await this.api.resolveResources<LevelData>(refs))
-      .then(resources => {
-        this.cache.set('class_levels', resources)
-        return resources
-      })
+    const refs = await this.api.resolveCollection(this.data.class_levels)
+    const resources = await this.api.resolveResources<LevelData>(refs)
+    this.cache.set('class_levels', resources)
+    return resources
   }
 
   get subclasses (): ClassData['subclasses'] {

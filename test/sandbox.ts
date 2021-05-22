@@ -1,12 +1,12 @@
 import { fivee } from '../src'
 
 const api = fivee({
-    baseURL: 'http://localhost:3000'
+  baseURL: 'http://dnd5eapi.co/'
 })
 
 api.races
-    .fetch('gnome')
-    .then(async gnome => {
-        console.log(gnome.name)
-    })
-    .catch(console.error)
+  .fetch('gnome')
+  .then(gnome => {
+    console.log(gnome.name)
+  })
+  .catch(console.error)

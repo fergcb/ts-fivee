@@ -32,32 +32,24 @@ export default abstract class Model<T extends BaseData = BaseData> {
   }
 
   protected async fetchCachable<U extends BaseData> (key: keyof T): Promise<U> {
-    if (this.cache.has(key)) return this.cache.get(key) as U
-    return await new Promise<U>((resolve, reject) => {
-      const ref = this.data[key]
-      if (this.isReference(ref)) {
-        this.api.resolveResource<U>(ref)
-          .then(resource => {
-            this.cache.set(key, resource)
-            resolve(resource)
-          })
-          .catch(reject)
-      }
-    })
+    if (this.cache.has(key)) return this.cache.get(key)
+    const ref = this.data[key]
+    if (!this.isReference(ref)) {
+      throw TypeError(`Value at key '${key as string}' of document '${this.index}' is not an APIReference.`)
+    }
+    const res = await this.api.resolveResource<U>(ref)
+    this.cache.set(key, res)
+    return res
   }
 
   protected async fetchCachables<U extends BaseData> (key: keyof T): Promise<U[]> {
-    if (this.cache.has(key)) return this.cache.get(key) as U[]
-    return await new Promise<U[]>((resolve, reject) => {
-      const refs = this.data[key]
-      if (this.isReferenceArray(refs)) {
-        this.api.resolveResources<U>(refs)
-          .then(resources => {
-            this.cache.set(key, resources)
-            resolve(resources)
-          })
-          .catch(reject)
-      } else reject(new TypeError(`Model.data.${key.toString()} is not an array of references.`))
-    })
+    if (this.cache.has(key)) return this.cache.get(key)
+    const refs = this.data[key]
+    if (!this.isReferenceArray(refs)) {
+      throw TypeError(`Value at key '${key as string}' of document '${this.index}' is not an APIReferenceList.`)
+    }
+    const resources = await this.api.resolveResources<U>(refs)
+    this.cache.set(key, resources)
+    return resources
   }
 }

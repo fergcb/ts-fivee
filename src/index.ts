@@ -51,6 +51,7 @@ import {
 
 import {
   FiveeError,
+  BadResponseError,
   CacheMissError,
   InvalidIndexError,
   NotFoundError
@@ -61,6 +62,7 @@ export {
   Fivee,
 
   FiveeError,
+  BadResponseError,
   CacheMissError,
   InvalidIndexError,
   NotFoundError,
