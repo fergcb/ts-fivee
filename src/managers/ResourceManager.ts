@@ -50,10 +50,10 @@ export default abstract class ResourceManager<T extends Model<U>, U extends Base
     return expanded
   }
 
-  public async fetchAll (): Promise<T[]> {
+  public async fetchAll (): Promise<Collection<T['index'], T>> {
     const refs = await this.getReferences()
     const indexes = Array.from(refs.keys())
     await Promise.all(indexes.map(async index => await this.fetch(index)))
-    return Array.from(this.cache.values())
+    return this.cache
   }
 }

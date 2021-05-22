@@ -4,9 +4,10 @@ const api = fivee({
   baseURL: 'http://dnd5eapi.co/'
 })
 
-api.races
-  .fetch('gnome')
-  .then(gnome => {
-    console.log(gnome.name)
+console.log('init')
+api.equipment.fetchAll()
+  .then(items => {
+    items.filter(item => item.weight > 3)
+      .forEach(item => console.log(item.name, item.weight))
   })
   .catch(console.error)
