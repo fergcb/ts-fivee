@@ -95,7 +95,7 @@ export class Fivee {
       const res = await this.getResource(reference)
       return res.data
     } catch (err) {
-      if (err.response !== null && err.response.status === 404) {
+      if (err.response !== undefined && err.response.status === 404) {
         throw new NotFoundError(this, this.extractReferenceURL(reference))
       }
       throw err
