@@ -10,7 +10,7 @@ export default abstract class ResourceManager<T extends Model<U>, U extends Base
 
   constructor (
     protected api: Fivee,
-    private readonly listURL: string
+    private readonly listURL: string,
   ) {
     this.cache = new Collection<BaseData['index'], T>()
     this.references = new Collection<BaseData['index'], APIResource>()

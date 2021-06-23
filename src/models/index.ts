@@ -47,5 +47,5 @@ export {
   Subclass,
   Subrace,
   Trait,
-  WeaponProperty
+  WeaponProperty,
 }

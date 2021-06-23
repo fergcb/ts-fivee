@@ -19,11 +19,11 @@ import {
   SubclassesManager,
   SubracesManager,
   TraitsManager,
-  WeaponPropertiesManager
+  WeaponPropertiesManager,
 } from './managers'
 
 const defaultOptions: FiveeOptions = {
-  baseURL: 'https://www.dnd5eapi.co'
+  baseURL: 'https://www.dnd5eapi.co',
 }
 
 export function fivee (options: FiveeOptions = {}): Fivee {
