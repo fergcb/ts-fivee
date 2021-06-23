@@ -24,7 +24,7 @@ import {
   Subclass,
   Subrace,
   Trait,
-  WeaponProperty
+  WeaponProperty,
 } from './models'
 
 import {
@@ -46,7 +46,7 @@ import {
   SubclassesManager,
   SubracesManager,
   TraitsManager,
-  WeaponPropertiesManager
+  WeaponPropertiesManager,
 } from './managers'
 
 import {
@@ -54,7 +54,7 @@ import {
   BadResponseError,
   CacheMissError,
   InvalidIndexError,
-  NotFoundError
+  NotFoundError,
 } from './errors'
 
 export {
@@ -110,5 +110,5 @@ export {
   SubclassesManager,
   SubracesManager,
   TraitsManager,
-  WeaponPropertiesManager
+  WeaponPropertiesManager,
 }

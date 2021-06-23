@@ -7,7 +7,7 @@ export default abstract class Model<T extends BaseData = BaseData> {
 
   constructor (
     protected api: Fivee,
-    protected data: T
+    protected data: T,
   ) {
     this.cache = new Collection()
   }

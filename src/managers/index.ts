@@ -37,5 +37,5 @@ export {
   SubclassesManager,
   SubracesManager,
   TraitsManager,
-  WeaponPropertiesManager
+  WeaponPropertiesManager,
 }
