@@ -1,7 +1,13 @@
 import Model from './Model'
-import { FeatureData } from '../structures'
 
-export default class Feature extends Model<FeatureData> {
+export interface FeatureData extends BaseData {
+  class: APIResource
+  subclass?: APIResource
+  desc: string[]
+  level: number
+}
+
+export class Feature extends Model<FeatureData> {
   get class (): FeatureData['class'] {
     return this.data.class
   }

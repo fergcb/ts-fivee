@@ -1,7 +1,6 @@
 import ResourceManager from './ResourceManager'
 import { Fivee } from '../fivee'
-import { MagicSchoolData } from '../structures'
-import { MagicSchool } from '../models'
+import { MagicSchool, MagicSchoolData } from '../models'
 
 export default class MagicSchoolsManager extends ResourceManager<MagicSchool, MagicSchoolData> {
   constructor (api: Fivee) {

@@ -1,7 +1,11 @@
 import Model from './Model'
-import { SkillData } from '../structures'
 
-export default class Skill extends Model<SkillData> {
+export interface SkillData extends BaseData {
+  desc: string[]
+  ability_score: APIResource
+}
+
+export class Skill extends Model<SkillData> {
   get desc (): SkillData['desc'] {
     return this.data.desc
   }

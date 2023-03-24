@@ -1,6 +1,5 @@
 import ResourceManager from './ResourceManager'
-import { Equipment, Gear, Armor, Tool, Weapon, Vehicle } from '../models'
-import { EquipmentData } from '../structures'
+import { Equipment, EquipmentData, Gear, Armor, Tool, Weapon, Vehicle } from '../models'
 import { Fivee } from '../fivee'
 
 export default class EquipmentManager extends ResourceManager<Equipment, EquipmentData> {

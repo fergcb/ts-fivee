@@ -1,7 +1,11 @@
 import Model from './Model'
-import { EquipmentCategoryData, EquipmentData } from '../structures'
+import { EquipmentData } from './Equipment'
 
-export default class EquipmentCategory extends Model<EquipmentCategoryData> {
+export interface EquipmentCategoryData extends BaseData {
+  equipment: APIResource[]
+}
+
+export class EquipmentCategory extends Model<EquipmentCategoryData> {
   get equipment (): EquipmentCategoryData['equipment'] {
     return this.data.equipment
   }

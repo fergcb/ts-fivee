@@ -1,7 +1,6 @@
 import ResourceManager from './ResourceManager'
 import { Fivee } from '../fivee'
-import { EquipmentCategoryData } from '../structures'
-import { EquipmentCategory } from '../models'
+import { EquipmentCategory, EquipmentCategoryData } from '../models'
 
 export default class EquipmentCategoriesManager extends ResourceManager<EquipmentCategory, EquipmentCategoryData> {
   constructor (api: Fivee) {

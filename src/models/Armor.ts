@@ -1,7 +1,13 @@
-import Equipment from './Equipment'
-import { ArmorData } from '../structures'
+import { Equipment, EquipmentData } from './Equipment'
 
-export default class Armor extends Equipment<ArmorData> {
+export interface ArmorData extends EquipmentData {
+  armor_category: ArmorCategory
+  armor_class: ArmorClass
+  str_minimum: number
+  stealth_disadvantage: boolean
+}
+
+export class Armor extends Equipment<ArmorData> {
   get armorCategory (): ArmorData['armor_category'] {
     return this.data.armor_category
   }

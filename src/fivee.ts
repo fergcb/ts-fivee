@@ -1,4 +1,3 @@
-import { BaseData, FiveeOptions, APIResource } from './structures'
 import axios, { AxiosResponse } from 'axios'
 import { BadResponseError, NotFoundError } from './errors'
 import {
@@ -21,6 +20,10 @@ import {
   TraitsManager,
   WeaponPropertiesManager,
 } from './managers'
+
+export interface FiveeOptions {
+  baseURL?: string
+}
 
 const defaultOptions: FiveeOptions = {
   baseURL: 'https://www.dnd5eapi.co',

@@ -1,7 +1,6 @@
 import ResourceManager from './ResourceManager'
 import { Fivee } from '../fivee'
-import { ConditionData } from '../structures'
-import { Condition } from '../models'
+import { Condition, ConditionData } from '../models'
 
 export default class ConditionsManager extends ResourceManager<Condition, ConditionData> {
   constructor (api: Fivee) {

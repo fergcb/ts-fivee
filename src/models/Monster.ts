@@ -1,7 +1,40 @@
 import Model from './Model'
-import { MonsterData, DamageTypeData, ConditionData, LanguageData } from '../structures'
+import { DamageTypeData } from './DamageType'
+import { ConditionData } from './Condition'
+import { LanguageData } from './Language'
 
-export default class Monster extends Model<MonsterData> {
+export interface MonsterData extends BaseData {
+  size: CreatureSize
+  type: string
+  subtype: string
+  alignment: string
+  armor_class: number
+  hit_points: number
+  hit_dice: string
+  speed: MonsterSpeed
+  strength: number
+  dexterity: number
+  constitution: number
+  intelligence: number
+  wisdom: number
+  charisma: number
+  proficiencies: ProficiencyBonus[]
+  damage_vulnerabilities: APIResource[]
+  damage_resistances: APIResource[]
+  damage_immunities: APIResource[]
+  condition_immunities: APIResource[]
+  senses: {
+    darkvision: string
+    passive_perception: number
+  }
+  languages: string
+  challenge_rating: number
+  special_abilities: SpecialAbility[]
+  actions: Action[]
+  legendary_actions: Action[]
+}
+
+export class Monster extends Model<MonsterData> {
   get size (): MonsterData['size'] {
     return this.data.size
   }

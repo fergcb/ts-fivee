@@ -1,7 +1,14 @@
 import Model from './Model'
-import { TraitData, RaceData, SubraceData } from '../structures'
+import { RaceData } from './Race'
+import { SubraceData } from './Subrace'
 
-export default class Trait extends Model<TraitData> {
+export interface TraitData extends BaseData {
+  races: APIResource[]
+  subraces: APIResource[]
+  desc: string[]
+}
+
+export class Trait extends Model<TraitData> {
   get races (): TraitData['races'] {
     return this.data.races
   }

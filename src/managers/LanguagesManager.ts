@@ -1,7 +1,6 @@
 import ResourceManager from './ResourceManager'
 import { Fivee } from '../fivee'
-import { Language } from '../models'
-import { LanguageData } from '../structures'
+import { Language, LanguageData } from '../models'
 
 export default class FeaturesManager extends ResourceManager<Language, LanguageData> {
   constructor (api: Fivee) {

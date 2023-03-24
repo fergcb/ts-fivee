@@ -1,7 +1,13 @@
 import Model from './Model'
-import { LanguageData } from '../structures'
 
-export default class Language extends Model<LanguageData> {
+export interface LanguageData extends BaseData {
+  desc: string
+  type: LanguageType
+  typical_speakers: string[]
+  script: string
+}
+
+export class Language extends Model<LanguageData> {
   get type (): LanguageData['type'] {
     return this.data.type
   }

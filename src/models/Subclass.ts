@@ -1,7 +1,15 @@
 import Model from './Model'
-import { SubclassData, LevelData, ClassData } from '../structures'
+import { ClassData } from './Class'
+import { LevelData } from './Level'
 
-export default class Subclass extends Model<SubclassData> {
+export interface SubclassData extends BaseData {
+  class: APIResource
+  subclass_flavor: string
+  desc: string[]
+  subclass_levels: APIResource
+}
+
+export class Subclass extends Model<SubclassData> {
   get class (): SubclassData['class'] {
     return this.data.class
   }

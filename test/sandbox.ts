@@ -1,7 +1,7 @@
 import { fivee } from '../src'
 
 const api = fivee({
-  baseURL: 'http://dnd5eapi.co/'
+  baseURL: 'http://dnd5eapi.co/',
 })
 
 console.log('init')

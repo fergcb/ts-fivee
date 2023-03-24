@@ -1,7 +1,28 @@
 import Model from './Model'
-import { RaceData, ProficiencyData, LanguageData, TraitData, SubraceData } from '../structures'
+import { LanguageData } from './Language'
+import { ProficiencyData } from './Proficiency'
+import { TraitData } from './Trait'
+import { SubraceData } from './Subrace'
 
-export default class Race extends Model<RaceData> {
+export interface RaceData extends BaseData {
+  name: string
+  speed: number
+  ability_bonuses: AbilityBonus[]
+  ability_bonus_options: Choice
+  alignment: string
+  age: string
+  size: CreatureSize
+  size_description: string
+  starting_proficiencies: ProficiencyData[]
+  starting_proficiency_options?: Choice
+  languages: APIResource[]
+  languages_options?: Choice
+  language_desc: string
+  traits: APIResource[]
+  subraces: APIResource[]
+}
+
+export class Race extends Model<RaceData> {
   get speed (): RaceData['speed'] {
     return this.data.speed
   }
