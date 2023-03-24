@@ -1,7 +1,15 @@
-import Equipment from './Equipment'
-import { WeaponData, WeaponPropertyData } from '../structures'
+import { Equipment, EquipmentData } from './Equipment'
+import { WeaponPropertyData } from './WeaponProperty'
 
-export default class Weapon extends Equipment<WeaponData> {
+export interface WeaponData extends EquipmentData {
+  weapon_category: WeaponCategory
+  weapon_range: WeaponRange
+  damage: Damage
+  range: WeaponRange
+  properties: APIResource[]
+}
+
+export class Weapon extends Equipment<WeaponData> {
   get weaponCategory (): WeaponData['weapon_category'] {
     return this.data.weapon_category
   }

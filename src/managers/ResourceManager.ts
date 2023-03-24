@@ -1,5 +1,4 @@
 import Collection from '@discordjs/collection'
-import { APIResource, BaseData } from '../structures'
 import { Fivee } from '../fivee'
 import { CacheMissError, InvalidIndexError } from '../errors'
 import Model from '../models/Model'

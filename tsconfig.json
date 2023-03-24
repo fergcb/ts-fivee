@@ -16,5 +16,9 @@
   "include": [
     "src/**/*",
     "test/**/*"
+  ],
+  "files": [
+    "src/index.ts",
+    "src/common.d.ts"
   ]
 }

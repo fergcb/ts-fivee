@@ -1,7 +1,12 @@
-import Equipment from './Equipment'
-import { VehicleData } from '../structures'
+import { Equipment, EquipmentData } from './Equipment'
 
-export default class Vehicle extends Equipment<VehicleData> {
+export interface VehicleData extends EquipmentData {
+  vehicle_category: VehicleCategory
+  desc?: string[]
+  speed?: VehicleSpeed
+}
+
+export class Vehicle extends Equipment<VehicleData> {
   get vehicleCategory (): VehicleData['vehicle_category'] {
     return this.data.vehicle_category
   }

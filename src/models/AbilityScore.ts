@@ -1,7 +1,13 @@
 import Model from './Model'
-import { AbilityScoreData, SkillData } from '../structures'
+import { SkillData } from './Skill'
 
-export default class AbilityScore extends Model<AbilityScoreData> {
+export interface AbilityScoreData extends BaseData {
+  full_name: string
+  desc: string[]
+  skills: APIResource[]
+}
+
+export class AbilityScore extends Model<AbilityScoreData> {
   get fullName (): AbilityScoreData['full_name'] {
     return this.data.full_name
   }

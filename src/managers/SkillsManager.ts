@@ -1,7 +1,6 @@
 import ResourceManager from './ResourceManager'
 import { Fivee } from '../fivee'
-import { Skill } from '../models'
-import { SkillData } from '../structures'
+import { Skill, SkillData } from '../models'
 
 export default class SkillsManager extends ResourceManager<Skill, SkillData> {
   constructor (api: Fivee) {

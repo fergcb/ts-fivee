@@ -1,7 +1,6 @@
 import ResourceManager from './ResourceManager'
 import { Fivee } from '../fivee'
-import { DamageTypeData } from '../structures'
-import { DamageType } from '../models'
+import { DamageType, DamageTypeData } from '../models'
 
 export default class DamageTypesManager extends ResourceManager<DamageType, DamageTypeData> {
   constructor (api: Fivee) {

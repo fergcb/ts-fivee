@@ -1,7 +1,27 @@
 import Model from './Model'
-import { SpellData, MagicSchoolData, ClassData, SubclassData } from '../structures'
+import { ClassData } from './Class'
+import { MagicSchoolData } from './MagicSchool'
+import { SubclassData } from './Subclass'
 
-export default class Spell extends Model<SpellData> {
+export interface SpellData extends BaseData {
+  desc: string[]
+  higher_level: string[]
+  range: string
+  components: string[]
+  material: string
+  ritual: boolean
+  duration: string
+  concentration: boolean
+  casting_time: string
+  level: number
+  attack_type: string
+  damage: Damage | LevelledSpellDamage
+  school: APIResource
+  classes: APIResource[]
+  subclasses: APIResource[]
+}
+
+export class Spell extends Model<SpellData> {
   get desc (): SpellData['desc'] {
     return this.data.desc
   }

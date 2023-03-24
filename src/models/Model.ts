@@ -1,5 +1,4 @@
 import Collection from '@discordjs/collection'
-import { BaseData, APIResource } from '../structures'
 import { Fivee } from '../fivee'
 
 export default abstract class Model<T extends BaseData = BaseData> {

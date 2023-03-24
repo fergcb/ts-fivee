@@ -1,7 +1,6 @@
 import ResourceManager from './ResourceManager'
 import { Fivee } from '../fivee'
-import { WeaponProperty } from '../models'
-import { WeaponPropertyData } from '../structures'
+import { WeaponProperty, WeaponPropertyData } from '../models'
 
 export default class WeaponPropertiesManager extends ResourceManager<WeaponProperty, WeaponPropertyData> {
   constructor (api: Fivee) {

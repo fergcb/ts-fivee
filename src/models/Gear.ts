@@ -1,7 +1,12 @@
-import Equipment from './Equipment'
-import { GearData, EquipmentCategoryData } from '../structures'
+import { Equipment, EquipmentData } from './Equipment'
+import { EquipmentCategoryData } from './EquipmentCategory'
 
-export default class Gear extends Equipment<GearData> {
+export interface GearData extends EquipmentData {
+  gear_category: APIResource
+  desc?: string[]
+}
+
+export class Gear extends Equipment<GearData> {
   get gearCategory (): GearData['gear_category'] {
     return this.data.gear_category
   }

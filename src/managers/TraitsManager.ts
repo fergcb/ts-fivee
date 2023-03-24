@@ -1,7 +1,6 @@
 import ResourceManager from './ResourceManager'
 import { Fivee } from '../fivee'
-import { Trait } from '../models'
-import { TraitData } from '../structures'
+import { Trait, TraitData } from '../models'
 
 export default class TraitsManager extends ResourceManager<Trait, TraitData> {
   constructor (api: Fivee) {

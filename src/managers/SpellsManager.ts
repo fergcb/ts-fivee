@@ -1,7 +1,6 @@
 import ResourceManager from './ResourceManager'
 import { Fivee } from '../fivee'
-import { Spell } from '../models'
-import { SpellData } from '../structures'
+import { Spell, SpellData } from '../models'
 
 export default class SpellsManager extends ResourceManager<Spell, SpellData> {
   constructor (api: Fivee) {

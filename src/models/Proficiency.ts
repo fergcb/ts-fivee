@@ -1,7 +1,15 @@
 import Model from './Model'
-import { ProficiencyData, ClassData, RaceData } from '../structures'
+import { ClassData } from './Class'
+import { RaceData } from './Race'
 
-export default class Proficiency extends Model<ProficiencyData> {
+export interface ProficiencyData extends BaseData {
+  type: string
+  classes: APIResource[]
+  races: APIResource[]
+  references: APIResource[]
+}
+
+export class Proficiency extends Model<ProficiencyData> {
   get type (): ProficiencyData['type'] {
     return this.data.type
   }

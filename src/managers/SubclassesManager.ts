@@ -1,7 +1,6 @@
 import ResourceManager from './ResourceManager'
 import { Fivee } from '../fivee'
-import { Subclass } from '../models'
-import { SubclassData } from '../structures'
+import { Subclass, SubclassData } from '../models'
 
 export default class SubclassManager extends ResourceManager<Subclass, SubclassData> {
   constructor (api: Fivee) {

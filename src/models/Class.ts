@@ -1,7 +1,34 @@
 import Model from './Model'
-import { ClassData, ProficiencyData, AbilityScoreData, StartingEquipmentData, LevelData, SubclassData, SpellCastingData } from '../structures'
+import { AbilityScoreData } from './AbilityScore'
+import { LevelData } from './Level'
+import { ProficiencyData } from './Proficiency'
+import { SubclassData } from './Subclass'
 
-export default class Class extends Model<ClassData> {
+export interface ClassData extends BaseData {
+  hit_die: number
+  proficiencies: APIResource[]
+  proficiency_choices: Choice[]
+  saving_throws: APIResource[]
+  starting_equipment: APIResource
+  class_levels: APIResource
+  subclasses: APIResource[]
+  spellcasting: APIResource
+}
+
+export interface SpellCastingData extends BaseData {
+  class: APIResource
+  level: number
+  spellcasting_ability: APIResource
+  info: SpellCastingInfo[]
+}
+
+export interface StartingEquipmentData extends BaseData {
+  class: APIResource
+  starting_equipment: EquipmentStack[]
+  starting_equipment_options: Choice[]
+}
+
+export class Class extends Model<ClassData> {
   get hitDie (): ClassData['hit_die'] {
     return this.data.hit_die
   }
