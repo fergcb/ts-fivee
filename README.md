@@ -1,3 +1,5 @@
+## <img src="https://github.com/fergcb/fivee/assets/6972523/caf5937b-7a45-47fa-92c0-8770ef69b0a0" height="18" /> ATTENTION: This package is deprecated. The Fivee wrapper for the [D&D 5e SRD API](https://dnd5eapi.co/) is no longer actively maintained and is severely out of date. Please reconsider using Fivee for new projects, and consider replacing it with something else in existing projects that use it.
+
 # Fivee - D&D 5e API Wrapper
 **Fivee is a powerful typescript wrapper library for the [D&D 5e SRD API](https://dnd5eapi.co/)**
 
